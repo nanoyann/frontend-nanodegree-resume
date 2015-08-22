@@ -113,7 +113,6 @@ a {
 }
 
 .white-text {
-  font-weight: bold;
   color: #fff;
 }
 
@@ -200,7 +199,7 @@ span {
   margin: 0 5%;
 }
 
-#map-div {
+#gmap {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
