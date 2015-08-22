@@ -15,7 +15,7 @@ var bio = {
 	display: function() {
 		// basics
 		var headerName = HTMLheaderName.replace(/%data%/, bio.name),
-			headerRole = HTMLheaderRole.replace(/%data%/, bio.role);
+			headerRole = HTMLheaderRole.replace(/%data%/, bio.role),
 			bioPic = HTMLbioPic.replace(/%data%/, bio.bioPic),
 			welcomeMsg = HTMLwelcomeMsg.replace(/%data%/, bio.welcomeMessage);
 		$('#header').prepend(headerRole);
@@ -49,7 +49,7 @@ bio.display();
 
 // EDUCATION
 var education = {
-	"schools": [
+	schools: [
 		{
 			name: "Harvard",
 			location: "Boston",
@@ -67,7 +67,7 @@ var education = {
 			url: "http://princeton.edu"
 		}
 	],
-	"onlineCourses": [
+	onlineCourses: [
 		{
 			title: "Font End Development",
 			school: "Udacity",
@@ -104,7 +104,7 @@ education.display();
 
 // WORK
 var work = {
-	"jobs" : [
+	jobs: [
 		{
 			employer: "Coffee Lab",
 			title: "Barista",
@@ -128,7 +128,7 @@ var work = {
 		}
 	],
 	display: function() {
-		for (job in work.jobs) {
+		for (var job in work.jobs) {
 			var currentJob = work.jobs[job],
 				employer = HTMLworkEmployer.replace(/%data%/, currentJob.employer),
 				title = HTMLworkTitle.replace(/%data%/, currentJob.title),
@@ -146,7 +146,7 @@ work.display();
 
 // PROJECTS
 var projects = {
-	"project" : [
+	project: [
 		{
 			title: "Paper Plane",
 			dates: "2005",
@@ -169,13 +169,13 @@ var projects = {
 		}
 	],
 	display: function() {
-		for (p in projects.project) {
+		for (var p in projects.project) {
 			var currentProject = projects.project[p],
 				projectTitle = HTMLprojectTitle.replace(/%data%/, currentProject.title),
 				projectDates = HTMLprojectDates.replace(/%data%/, currentProject.dates),
 				projectDescription = HTMLprojectDescription.replace(/%data%/, currentProject.description),
 				projectImages = '';
-				for (i in currentProject.images) {
+				for (var i in currentProject.images) {
 					projectImages += HTMLprojectImage.replace(/%data%/, currentProject.images[i]);
 				}
 				formatedProject = projectTitle + projectDates + projectDescription + projectImages;
